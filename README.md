@@ -1,11 +1,13 @@
 % Environnement Python  
 % Didier Richard  
-% 2018/08/30
+% 2020/11/01
 
 ---
 
 revision:
 - 1.0.0 : 2018/08/30  
+- 3.6.6 : 2019/01/05  
+- 3.6.9 : 2020/11/01  
 
 ---
 
@@ -30,9 +32,9 @@ $ docker tag dgricci/python:$(< VERSION) dgricci/python:latest
 
 ```bash
 $ docker build \
-    --build-arg PYTHON_VERSION=3.6.6 \
-    --build-arg PYTHON_DOWNLOAD_URL=https://www.python.org/ftp/python/$PYTHON_VERSION/Python-3.6.6.tar.xz \
-    --build-arg PYTHON_PIP_VERSION=18.0 \
+    --build-arg PYTHON_VERSION=3.6.9 \
+    --build-arg PYTHON_DOWNLOAD_URL=https://www.python.org/ftp/python/3.6.9/Python-3.6.9.tar.xz \
+    --build-arg PYTHON_PIP_VERSION=20.2.4 \
     --build-arg PYTHON_PIP_DOWNLOAD_URL=https://bootstrap.pypa.io/get-pip.py \
     -t dgricci/python:$(< VERSION) .
 $ docker tag dgricci/python:$(< VERSION) dgricci/python:latest
@@ -44,8 +46,8 @@ See `dgricci/stretch` README for handling permissions with dockers volumes.
 
 ```bash
 $ docker run -it --rm dgricci/python:$(< VERSION)
-Python 3.6.6
-pip 18.0 from /usr/local/lib/python3.6/site-packages/pip (python 3.6)
+Python 3.6.9
+pip 20.2.4 from /usr/local/lib/python3.6/site-packages/pip (python 3.6)
 ```
 
 __Et voilà !__

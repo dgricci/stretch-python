@@ -19,11 +19,11 @@ for server in ha.pool.sks-keyservers.net \
     keyserver.ubuntu.com \
     hkp://keyserver.ubuntu.com:80 \
     pgp.mit.edu ; do
-    gpg --keyserver "${server}" --recv-keys 0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D && break || echo "Trying new server..."
+    gpg --no-tty --keyserver "${server}" --recv-keys 0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D && break || echo "Trying new server..."
 done
 curl -fsSL "${PYTHON_DOWNLOAD_URL}" -o python.tar.xz
 curl -fsSL "${PYTHON_DOWNLOAD_URL}.asc" -o python.tar.xz.asc
-gpg --batch --verify python.tar.xz.asc python.tar.xz
+gpg --no-tty --batch --verify python.tar.xz.asc python.tar.xz
 rm -f python.tar.xz.asc
 mkdir -p /usr/src/python
 tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz

@@ -3,17 +3,17 @@
 FROM dgricci/dev:1.0.0
 MAINTAINER Didier Richard <didier.richard@ign.fr>
 LABEL       version="1.0.0" \
-            python="3.6.6" \
-            pip="18.0" \
+            python="3.6.9" \
+            pip="20.2.4" \
             os="Debian Stretch" \
             description="Python, pip"
 
 ARG PYTHON_VERSION
-ENV PYTHON_VERSION ${PYTHON_VERSION:-3.6.6}
+ENV PYTHON_VERSION ${PYTHON_VERSION:-3.6.9}
 ARG PYTHON_DOWNLOAD_URL
 ENV PYTHON_DOWNLOAD_URL ${PYTHON_DOWNLOAD_URL:-https://www.python.org/ftp/python/$PYTHON_VERSION/Python-$PYTHON_VERSION.tar.xz}
 ARG PYTHON_PIP_VERSION
-ENV PYTHON_PIP_VERSION ${PYTHON_PIP_VERSION:-18.0}
+ENV PYTHON_PIP_VERSION ${PYTHON_PIP_VERSION:-20.2.4}
 ARG PYTHON_PIP_DOWNLOAD_URL
 ENV PYTHON_PIP_DOWNLOAD_URL ${PYTHON_PIP_DOWNLOAD_URL:-https://bootstrap.pypa.io/get-pip.py}
 
